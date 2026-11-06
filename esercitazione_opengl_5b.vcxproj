@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e354a521-705a-4d38-83d2-276c7b0bf987}</ProjectGuid>
+    <RootNamespace>esercitazione_opengl_5b</RootNamespace>
+    <ProjectName>esercitazione_opengl_5b</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)dependencies_GL_GLFW\include;$(ProjectDir)dependencies_GL_GLFW\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies_GL_GLFW\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)dependencies_GL_GLFW\include;$(ProjectDir)dependencies_GL_GLFW\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies_GL_GLFW\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ShapeGenerator.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderMaker.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\glad.c" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="dependencies_GL_GLFW\ImGui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MeshData.h" />
+    <ClInclude Include="PlayerShapeLoader.h" />
+    <ClInclude Include="ShapeGenerator.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Gui.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderMaker.h" />
+    <ClInclude Include="dependencies_GL_GLFW\include\glad\glad.h" />
+    <ClInclude Include="dependencies_GL_GLFW\include\KHR\khrplatform.h" />
+    <ClInclude Include="dependencies_GL_GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="dependencies_GL_GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imconfig.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imgui.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imgui_impl_glfw.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imgui_internal.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imstb_textedit.h" />
+    <ClInclude Include="dependencies_GL_GLFW\ImGui\imstb_truetype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dependencies_GL_GLFW\lib\glfw3.lib" />
+    <None Include="packages.config" />
+    <None Include="shader\vertexshaderC.glsl" />
+    <None Include="shader\fragmentshaderC.glsl" />
+    <None Include="README_PRIMA_DI_INIZIARE.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="packages\glm.1.0.3\build\native\glm.targets" Condition="Exists('packages\glm.1.0.3\build\native\glm.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\glm.1.0.3\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glm.1.0.3\build\native\glm.targets'))" />
+  </Target>
+</Project>
